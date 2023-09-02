@@ -1,0 +1,91 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+/*
+Crie um código com um objeto chamado “Banco”. Ele deverá ter propriedades que
+incluem conta, saldo, tipo de conta e agência e os seus métodos devem ser: buscar
+saldo, depósito, saque e número da conta.
+Observações:
+- buscar saldo deve retornar o valor atual do saldo;
+- para o depósito, você deverá passar um valor como parâmetro e adicioná-lo no
+saldo final do objeto;
+- para o saque, você deverá passar um valor como parâmetro e subtraí-lo no saldo
+final do objeto;
+- o número da conta deve retornar o número da conta.
+Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o
+link desse projeto no campo ao lado para que outros desenvolvedores possam
+analisá-lo
+*/
+console.log("começando o algoritmo para simular um banco usando Objeto e alguns metodos\n");
+
+
+
+let banco = [
+  {
+    "conta": 0001,
+    "saldo": 400,
+    "tipo de conta": 'corrente',
+    "agencia":2403
+  }]
+ 
+  /*
+console.log("o array pessoa possui o elemento: ",banco);
+
+
+chamarSaldo();
+deposito();
+saque();
+numeroConta();
+
+*/
+let funcao = parseInt(prompt("digite a funcao que desejo:\n 1 - Buscar Saldo \n 2 -Depósito \n 3 - Saque \n 4 - Número da conta   \n"));
+
+switch (funcao) {
+    case 1:
+        chamarSaldo();
+        break;
+    case 2:
+        console.log("seu saldo é: ",banco[0].saldo);
+        let dinheiro1 = parseInt(prompt("digite o Valor que vc deseja fazer o deposito:"));
+        
+        deposito(dinheiro1);
+        break;
+    case 3:
+        console.log("seu saldo é: ",banco[0].saldo);
+        let dinheiro2 = parseInt(prompt("digite o Valor que vc deseja retirar no saque:"));
+        saque(dinheiro2);
+        break;
+    case 4:
+        numeroConta();
+        break;
+   
+    default:
+        funcao = "função invalida";
+        console.log("esta função é invalida\n")
+        
+}
+
+console.log("fim do algoritmo")
+/*
+console.log("pulando para utilizar o for...in\n");
+for (let i in banco) {
+  console.log(i); // escreve as posições 0, 1, 2, 3
+}
+console.log("pulando para utilizar o for...of\n");
+
+for (let i of banco) {
+  console.log(i); // escreve os valores 'jose',19,'autonomo','manaus'
+}
+*/
+
+function chamarSaldo(){
+console.log("seu saldo é: ",banco[0].saldo);
+}
+function deposito(dinheiro1){
+console.log("seu saldo depois do deposito  é: ",banco[0].saldo + dinheiro1);
+}
+function saque(dinheiro2){
+console.log("seu saldo depois do saque  é: ",banco[0].saldo  - dinheiro2);
+}
+function numeroConta(){
+console.log("o numero da conta é: ",banco[0].conta);
+}
